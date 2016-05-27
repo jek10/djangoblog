@@ -17,13 +17,6 @@
         <h3>{{ instance.title }}</h3><small>{{ instance.publish }} ago {% if instance.user.get_full_name %}
         <p>Author: {{ instance.user.get_full_name }}</p>
 {% endif %}</small>{% if instance.draft %}<span style='color:red;'>Draft</span> {% endif %}
-        
-
-
-        <div class="fb-share-button" data-href="{{ request.build_absolute_uri }}" data-layout="button_count" data-mobile-iframe="true">
-        </div></hr>
-
-
 
         <p>{{ instance.content }}</p><hr/>
     </div>
