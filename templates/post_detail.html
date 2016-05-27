@@ -16,9 +16,9 @@
       <div class="caption post-detail-item">
         <h3>{{ instance.title }}</h3><small>{{ instance.publish }} ago {% if instance.user.get_full_name %}
         <p>Author: {{ instance.user.get_full_name }}</p>
-{% endif %}</small>{% if instance.draft %}<span style='color:red;'>Draft</span> {% endif %}
+        {% endif %}</small>{% if instance.draft %}<span style='color:red;'>Draft</span> {% endif %}
 
-        <p>{{ instance.content }}</p><hr/>
+        <p>{{ instance.get_markdown }}</p><hr/>
     </div>
   </div>
 </div>
