@@ -7,11 +7,11 @@
         {% if obj.image %}
          <img src='{{ obj.image.url }}' class="img-fluid" alt="Responsive image"></br>
         {% endif %}
-      <div class="caption">
+      <div class="caption post-detail-item">
         {% if obj.draft %}<h3>Staff only: Draft</h3>{% endif %} {% if obj.publish > today %}<h3>Staff Only: Future Post</h3>{% endif %}
         <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a> <small>{{ obj.publish }}</small></h3><small>{{ obj.timestamp|timesince }}</small>
         {% if obj.user.get_full_name %}<p>Author: {{ obj.user.get_full_name }}</p>{% endif %}
-        <p>{{ obj.content|linebreaks|truncatechars:120 }}</p>
+        <p>{{ obj.get_markdown|truncatechars:120 }}</p>
         <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
       </div>
   </div>
